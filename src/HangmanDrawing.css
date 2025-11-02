@@ -1,0 +1,145 @@
+.hangman-container {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+/* Gallow */
+.gallow-base {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 160px;
+  height: 10px;
+  background: #333;
+}
+.gallow-vertical {
+  position: absolute;
+  bottom: 10px;
+  left: 60px;
+  width: 10px;
+  height: 180px;
+  background: #333;
+}
+.gallow-top {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: 80px;
+  height: 10px;
+  background: #333;
+}
+.gallow-rope {
+  position: absolute;
+  top: 10px;
+  left: 130px;
+  width: 2px;
+  height: 30px;
+  background: #333;
+}
+
+/* Body parts */
+.head {
+  position: absolute;
+  top: 40px;
+  left: 115px;
+  width: 30px;
+  height: 30px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.body {
+  position: absolute;
+  top: 70px;
+  left: 129px;
+  width: 2px;
+  height: 50px;
+  background: white;
+}
+
+.left-arm {
+  position: absolute;
+  top: 80px;
+  left: 129px;
+  width: 30px;
+  height: 2px;
+  background: white;
+  transform: rotate(-45deg);
+  transform-origin: left;
+}
+
+.right-arm {
+  position: absolute;
+  top: 80px;
+  left: 101px;
+  width: 30px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transform-origin: right;
+}
+
+.left-leg {
+  position: absolute;
+  top: 120px;
+  left: 129px;
+  width: 30px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transform-origin: left;
+}
+
+.right-leg {
+  position: absolute;
+  top: 120px;
+  left: 101px;
+  width: 30px;
+  height: 2px;
+  background: white;
+  transform: rotate(-45deg);
+  transform-origin: right;
+}
+
+.eyes::before,
+.eyes::after {
+  content: "x";
+  font-size: 16px;
+  position: absolute;
+  top: 46px;
+  color: red;
+}
+.eyes::before {
+  left: 122px;
+}
+.eyes::after {
+  left: 132px;
+}
+
+.blood-drop {
+  position: absolute;
+  top: 72px; /* start below the head */
+  left: 127px;
+  width: 6px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+  animation: drip 1.2s ease-in forwards;
+}
+
+@keyframes drip {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
